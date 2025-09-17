@@ -21,6 +21,16 @@ photoInput.addEventListener('change', () => {
     const formData = new FormData();
     formData.append('image', file);
 
+
+    // Change this to your actual Render backend URL
+    const BACKEND_URL = "https://sih-backend-wvvb.onrender.com";
+
+    fetch(`${BACKEND_URL}/api/predict`, {
+    method: "POST",
+    body: formData
+    })
+
+
     // Call Flask API
     fetch('/api/predict', { method: 'POST', body: formData })
         .then(res => res.json())
