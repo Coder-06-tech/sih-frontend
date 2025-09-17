@@ -1,0 +1,5 @@
+data/
+train.py
+.gitattributes
+CattleBreed/
+__pycache__
